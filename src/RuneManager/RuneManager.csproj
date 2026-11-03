@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyName>RuneManager</AssemblyName>
+    <RootNamespace>RuneManager</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <Description>League of Legends LCU rune page overwriter</Description>
+  </PropertyGroup>
+</Project>
