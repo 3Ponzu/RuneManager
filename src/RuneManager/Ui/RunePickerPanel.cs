@@ -67,7 +67,7 @@ internal sealed class RunePickerPanel : Panel
             ColumnCount = 2
         };
         primaryTable.ColumnStyles.Clear();
-        primaryTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 65)); // ラベル幅を最適化
+        primaryTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 65));
         primaryTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
 
         primaryTable.RowStyles.Clear();
@@ -229,7 +229,6 @@ internal sealed class RunePickerPanel : Panel
             }
         }
 
-        // シャード重複バグ（アダプティブフォース連動）を防止する順序消費ロジック
         Array.Clear(_selectedShardPerks, 0, _selectedShardPerks.Length);
         if (_catalog.ShardSlots.Count >= 3)
         {
@@ -472,6 +471,9 @@ internal sealed class RunePickerPanel : Panel
                 }
                 else
                 {
+                    // 同じ段に既に選択されているルーンがあれば解除
+                    _selectedSubPerks.RemoveAll(id => perkIds.Contains(id));
+
                     if (_selectedSubPerks.Count >= 2)
                     {
                         _selectedSubPerks.RemoveAt(0);
